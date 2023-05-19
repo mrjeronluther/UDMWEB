@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="design.css">
+  <link rel = "shortcut icon" href = "assets/images/favicon.ico">
+  <script src="script.js" defer></script>
+  <!-- Link to Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+  <title>UDM Appointment</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand custom-color" href="index.html">
+        <img src="logo.png" alt="A description of the image" id="logo" class="img-fluid">
+      </a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8" >
+        
+        <div class="card mt-5" style="border: 2px solid lightgreen;">
+          <div class="card-header" style="background-color: lightgreen;">
+            <h3 class="text-center">Appointment Form</h3>
+          </div>
+          <div class="card-body">
+            <form action="database.php" method="POST">
+              <div class="mb-3">
+                <label for="fullname" class="form-label">Fullname</label>
+                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your Full Name" onkeypress="return /[a-zA-Z. ]/i.test(event.key)" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="mail" placeholder="Enter your Email" required>
+              </div>
+              <h3 class="texthead"><center>APPOINTMENT CALENDAR</center></h3>
+              
+              <div class="calendar">
+               
+                <div class="calendar-header row align-items-center">
+                    <div class="month-picker col align-items-center px-md-7" id="month-picker">
+                      <div class="col-1" style="text-align:end" id="prev-month">
+                        &lt;
+                      </div>
+                      <div class="col align-items-center d-flex justify-content-center align-items-center">
+                        <span id="month" class="textmonth"></span>
+                      </div>
+                      <div class="col-1" id="next-month">
+                        &gt;
+                      </div>
+                    </div>
+                  </div>
+                <div class="calendar-body">
+                  <div class="calendar-week-day">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                  </div>
+                  <div class="calendar-days"></div>
+                </div>
+                <div class="calendar-footer"></div>
+                <div class="month-list"></div>
+                <center>
+                  <select id="hours" name="Time" class="form-select" required>
+                    <option disable selected value="">Select Time</option>
+                  </select>
+                </center>
+              </div>
+              <div class="d-grid">
+                <button name="submit" id="submit" type="submit" class="btn btn-primary bg-success">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="faq-icon text-center" onclick="toggleForm()">
+      <img src="faq.png" alt="FAQ Icon">
+    </div>
+  </div>
+
+  <div class="faq-overlay">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="faq-form">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq">
+              <div class="question" onclick="toggleAnswer(event)">Q: What is HTML?</div>
+              <div class="answer">A: HTML stands for HyperText Markup Language. It is the standard markup language used for creating web pages.</div>
+            </div>
+            <div class="faq">
+              <div class="question" onclick="toggleAnswer(event)">Q: What is CSS?</div>
+              <div class="answer">A: CSS stands for Cascading Style Sheets. It is used for describing the look and formatting of a document written in HTML.</div>
+            </div>
+            <button class="btn btn-primary bg-success" onclick="closeForm()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Link to Bootstrap JavaScript bundle -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+
+    
+  </script>
+</body>
+
+</html>
