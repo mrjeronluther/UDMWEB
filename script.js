@@ -67,19 +67,18 @@ function restrictCharactersemail(event) {
 function toggleAnswer(event) {
   var question = event.target;
   var answer = question.nextElementSibling;
-  var form = question.closest('.faq-form');
 
   answer.classList.toggle('show');
-  scrollToQuestion(question, form);
+  scrollToQuestion(question);
 }
 
-function scrollToQuestion(question, form) {
-  var formRect = form.getBoundingClientRect();
-  var questionRect = question.getBoundingClientRect();
-  var scrollTop = form.scrollTop + questionRect.top - formRect.top;
+function scrollToQuestion(question) {
+  var scrollOptions = {
+    behavior: 'smooth',
+    block: 'start'
+  };
 
-  form.scrollTo({
-    top: scrollTop,
-    behavior: 'smooth'
-  });
+  smoothScrollIntoViewIfNeeded(question, scrollOptions);
 }
+
+
