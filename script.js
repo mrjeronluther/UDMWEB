@@ -1,4 +1,31 @@
 
+// Function to restrict characters based on a regular expression
+function restrictCharacters(inputElement, pattern) {
+  inputElement.addEventListener('input', function(event) {
+    var inputValue = event.target.value;
+    var restrictedValue = inputValue.replace(pattern, '');
+    if (restrictedValue !== inputValue) {
+      event.target.value = restrictedValue;
+    }
+  });
+}
+
+// Usage
+var inputField1 = document.getElementById('fullanme');
+var inputField2 = document.getElementById('email');
+
+var pattern1 = /[^a-zA-Z. ]/g; // Regular expression to restrict characters
+var pattern2 = /[^a-zA-Z.@0-9 ]/g;
+
+restrictCharacters(inputField1, pattern1); // Restrict characters in inputField1
+restrictCharacters(inputField2, pattern2); // Restrict characters in inputField2
+
+
+
+
+
+
+
 //FAQ
 
 
@@ -47,21 +74,7 @@ function stopShaking() {
 // Initial start shaking after 5 seconds
 setTimeout(startShaking, 5000);
 
-// keypress disable character
 
-function restrictCharacters(event) {
-  var charCode = event.keyCode || event.which;
-  var charStr = String.fromCharCode(charCode);
-  var pattern = /[a-zA-Z. ]/;
-  return pattern.test(charStr);
-}
-
-function restrictCharactersemail(event) {
-  var charCode = event.keyCode || event.which;
-  var charStr = String.fromCharCode(charCode);
-  var pattern = /[a-zA-Z.@0-9 ]/;
-  return pattern.test(charStr);
-}
 
 document.addEventListener('DOMContentLoaded', function() {
   var container = document.getElementById('faq-overlay');
