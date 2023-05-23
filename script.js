@@ -113,15 +113,28 @@ function scrollToQuestion(question, form) {
 
 function closeForm() {
   var formOverlay = document.querySelector('.faq-overlay');
+  var form = formOverlay.querySelector('.faq-form');
+  
+  // Reset the form to its initial state
+  resetForm(form);
+  
+  // Scroll the form to the top
+  form.scrollTop = 0;
+  
+  // Hide the form overlay
   formOverlay.style.display = 'none';
+}
 
-  // Reset all the questions
-  var allQuestions = document.querySelectorAll('.question');
-  allQuestions.forEach(function(question) {
-    var answer = question.nextElementSibling;
+function resetForm(form) {
+  // Get all the answer divs
+  var allAnswers = form.querySelectorAll('.answer');
+
+  // Iterate over all answer divs and remove 'show' class
+  allAnswers.forEach(function(answer) {
     answer.classList.remove('show');
   });
 }
+
 
 function toggleAnswer(event) {
   var question = event.target;
