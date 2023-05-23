@@ -1,5 +1,4 @@
 
-
 //FAQ
 
 
@@ -99,4 +98,47 @@ function scrollToQuestion(question, form) {
 
   question.scrollIntoView(scrollOptions);
 }
+
+function scrollToQuestion(question, form) {
+  var formRect = form.getBoundingClientRect();
+  var questionRect = question.getBoundingClientRect();
+  var scrollTop = form.scrollTop + questionRect.top - formRect.top;
+
+  form.scrollTo({
+    top: scrollTop,
+    behavior: 'smooth'
+  });
+}
+
+
+function closeForm() {
+  var formOverlay = document.querySelector('.faq-overlay');
+  formOverlay.style.display = 'none';
+
+  // Reset all the questions
+  var allQuestions = document.querySelectorAll('.question');
+  allQuestions.forEach(function(question) {
+    var answer = question.nextElementSibling;
+    answer.classList.remove('show');
+  });
+}
+
+function toggleAnswer(event) {
+  var question = event.target;
+  var answer = question.nextElementSibling;
+  var form = question.closest('.faq-form');
+
+  // Close previously opened answer
+  var openAnswers = form.querySelectorAll('.answer.show');
+  openAnswers.forEach(function(openAnswer) {
+    if (openAnswer !== answer) {
+      openAnswer.classList.remove('show');
+    }
+  });
+
+  // Toggle current answer
+  answer.classList.toggle('show');
+  scrollToQuestion(question, form);
+}
+
 
