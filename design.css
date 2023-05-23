@@ -67,7 +67,6 @@ form textarea{
     margin: 0 auto;
     box-sizing: border-box;
   }
-  
 
 
 .calendar-header {
@@ -98,36 +97,35 @@ form textarea{
 }
 
 .calendar-body {
-    padding: 10px;
-    background-color: whitesmoke;
+  padding: 10px;
+  background-color: whitesmoke;
+  
 }
 
 .calendar-week-day {
-    height: 50px;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    font-weight: 600;
-}
-
-.calendar-week-day div {
-    display: grid;
-    place-items: center;
-    color: var(--bg-second);
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 600;
 }
 
 .calendar-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 2px;
-    color: var(--color-txt);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  color: var(--color-txt);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-  
+
+
+
+
 .calendar-days div {
-    width: 50px;
+    width: 100%;
     height: 50px;
     display: flex;
     align-items: center;
@@ -309,8 +307,8 @@ div.month-picker + div {
   
   .faq-icon {
     position: fixed;
-    top: 85px;
-    right: 0px;
+    top: 90%;
+    right: 1%;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -345,17 +343,24 @@ div.month-picker + div {
   }
   
   .faq-form {
+    padding-top: 0%;
     max-width: 600px;
-    background-color: #FFFFFF;
+    background-color: lightgray;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
+    max-height: 500px; /* Set the desired maximum height */
+    overflow-y: auto; /* Enable vertical scrollbar when content exceeds max-height */
+    color: #28924d;
+    }
+    
+  
   
   .faq-form h2 {
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
+    color: darkgreen;
   }
   
   .faq-form .question {
@@ -371,16 +376,66 @@ div.month-picker + div {
   
   .faq-form .answer {
     display: none;
-    margin-bottom: 20px;
+    color: #151426;
+    margin-bottom: 2%;
+    margin-left: 5%;
+  
   }
   
   .faq-form .answer.show {
     display: block;
   }
+
+  
   
   .faq-form button {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    position: sticky;
+    bottom: 1px; /* Adjust the distance from the bottom as needed */
+    z-index: 3; /* Ensure the button is above other elements */
+    background-color: #FFFFFF; /* Set the desired background color for the container */
+    padding: 10px; /* Add padding for spacing */
   }
-  
+
+  @media only screen and (max-width: 490px) {
+    .calendar-days div {
+        width: 35px;
+        height: 35px;
+    }
+    .calendar-week-day {
+        height: 30px;
+    }
+    .calendar-week-day div{
+        height: 30px;
+        width: 40px;
+    }
+    .textmonth {
+        font-size: .65em;
+    }
+    .text-center {
+        font-size: 2em;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .calendar-week-day {
+        font-size: .75em;
+    }
+    .calendar-days div{
+        height: 30px;
+        width: 30px;
+    }
+
+    .calendar-week-day div{
+        width: 28px;
+    }   
+}
+
+
+.iconudm {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto; /* Center the icon horizontally */
+}

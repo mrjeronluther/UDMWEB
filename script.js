@@ -292,9 +292,23 @@ function closeForm() {
 }
 
 function toggleAnswer(event) {
-  var answer = event.target.nextElementSibling;
-  answer.classList.toggle('show');
+  var clickedAnswer = event.target.nextElementSibling;
+
+  // Get all the answer divs
+  var allAnswers = document.querySelectorAll('.answer');
+
+  // Iterate over all answer divs and remove 'show' class
+  allAnswers.forEach(function(answer) {
+    if (answer !== clickedAnswer) {
+      answer.classList.remove('show');
+    }
+  });
+
+  // Toggle the 'show' class for the clicked answer
+  clickedAnswer.classList.toggle('show');
 }
+
+
 
 function startShaking() {
   var faqIcon = document.querySelector('.faq-icon');
@@ -311,5 +325,20 @@ function stopShaking() {
 // Initial start shaking after 5 seconds
 setTimeout(startShaking, 5000);
 
+// keypress disable character
+
+function restrictCharacters(event) {
+  var charCode = event.keyCode || event.which;
+  var charStr = String.fromCharCode(charCode);
+  var pattern = /[a-zA-Z. ]/;
+  return pattern.test(charStr);
+}
+
+function restrictCharactersemail(event) {
+  var charCode = event.keyCode || event.which;
+  var charStr = String.fromCharCode(charCode);
+  var pattern = /[a-zA-Z.@0-9 ]/;
+  return pattern.test(charStr);
+}
 
 
