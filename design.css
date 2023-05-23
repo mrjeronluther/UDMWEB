@@ -352,9 +352,7 @@ div.month-picker + div {
     max-height: 500px; /* Set the desired maximum height */
     overflow-y: auto; /* Enable vertical scrollbar when content exceeds max-height */
     color: #28924d;
-    }
-    
-  
+  }
   
   .faq-form h2 {
     text-align: center;
@@ -375,16 +373,21 @@ div.month-picker + div {
   }
   
   .faq-form .answer {
-    display: none;
+    top: 0%;
+    height: 0;
+    overflow: hidden;
     color: #151426;
     margin-bottom: 2%;
     margin-left: 5%;
-  
+    transition: height 0.3s ease;
   }
   
   .faq-form .answer.show {
-    display: block;
+    height: auto;
+    padding: 10px; /* Add desired padding or styles */
+    margin-top: 0; /* Add this line to reset the top margin */
   }
+  
 
   
   
