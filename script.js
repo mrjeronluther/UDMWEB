@@ -1,25 +1,11 @@
-
 // Function to restrict characters based on a regular expression
 function restrictCharacters(inputElement, pattern) {
-  inputElement.addEventListener('input', function(event) {
-    var inputValue = event.target.value;
-    var restrictedValue = inputValue.replace(pattern, '');
-    if (restrictedValue !== inputValue) {
-      event.target.value = restrictedValue;
-    }
-  });
+  var inputValue = inputElement.value;
+  var restrictedValue = inputValue.replace(pattern, '');
+  if (restrictedValue !== inputValue) {
+    inputElement.value = restrictedValue;
+  }
 }
-
-// Usage
-var inputField1 = document.getElementById('fullanme');
-var inputField2 = document.getElementById('email');
-
-var pattern1 = /[^a-zA-Z. ]/g; // Regular expression to restrict characters
-var pattern2 = /[^a-zA-Z.@0-9 ]/g;
-
-restrictCharacters(inputField1, pattern1); // Restrict characters in inputField1
-restrictCharacters(inputField2, pattern2); // Restrict characters in inputField2
-
 
 
 
