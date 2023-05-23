@@ -32,11 +32,11 @@
             <form action="database.php" method="POST">
               <div class="mb-3">
                 <label for="fullname" class="form-label">Fullname</label>
-                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your Full Name" onkeypress="return restrictCharacters(event);" required>
+                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your Full Name" oninput="restrictCharacters(event.target, /[^a-zA-Z. ]/g);" required>
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="mail" placeholder="Enter your Email"  onkeypress="return restrictCharactersemail(event);" required>
+                <input type="email" class="form-control" id="email" name="mail" placeholder="Enter your Email" oninput="restrictCharacters(event.target, /[^a-zA-Z.@0-9 ]/g);" required>
               </div>
               <h3 class="texthead"><center>APPOINTMENT CALENDAR</center></h3>
               
