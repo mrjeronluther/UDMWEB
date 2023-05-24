@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="design.css">
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <link rel = "shortcut icon" href = "assets/images/favicon.ico">
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
   <script src="script.js" defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <!-- Link to Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
   <title>UDM Appointment</title>
 </head>
+
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-custom">
@@ -23,8 +25,8 @@
 
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-lg-6 col-md-8" >
-        
+      <div class="col-lg-6 col-md-8">
+
         <div class="card mt-5" style="border: 2px solid lightgreen;">
           <div class="card-header" style="background-color: lightgreen;">
             <h3 class="text-center">Appointment Form</h3>
@@ -33,29 +35,33 @@
             <form action="database.php" method="POST">
               <div class="mb-3">
                 <label for="fullname" class="form-label">Fullname</label>
-                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your Full Name" oninput="restrictCharacters(event.target, /[^a-zA-Z. ]/g);" required>
+                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your Full Name"
+                  oninput="restrictCharacters(event.target, /[^a-zA-Z. ]/g);" required>
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="mail" placeholder="Enter your Email" oninput="restrictCharacters(event.target, /[^a-zA-Z.@0-9 ]/g);" required>
+                <input type="email" class="form-control" id="email" name="mail" placeholder="Enter your Email"
+                  oninput="restrictCharacters(event.target, /[^a-zA-Z.@0-9 ]/g);" required>
               </div>
-              <h3 class="texthead"><center>APPOINTMENT CALENDAR</center></h3>
-              
+              <h3 class="texthead">
+                <center>APPOINTMENT CALENDAR</center>
+              </h3>
+
               <div class="calendar">
-               
+
                 <div class="calendar-header row align-items-center">
-                    <div class="month-picker col align-items-center px-md-7" id="month-picker">
-                      <div class="col-1" style="text-align:end" id="prev-month">
-                        &lt; 
-                      </div>
-                      <div class="col align-items-center d-flex justify-content-center align-items-center">
-                        <span id="month" class="textmonth"></span>
-                      </div>
-                      <div class="col-1" id="next-month">
-                        &gt;
-                      </div>
+                  <div class="month-picker col align-items-center px-md-7" id="month-picker">
+                    <div class="col-1" style="text-align:end" id="prev-month">
+                      &lt;
+                    </div>
+                    <div class="col align-items-center d-flex justify-content-center align-items-center">
+                      <span id="month" class="textmonth"></span>
+                    </div>
+                    <div class="col-1" id="next-month">
+                      &gt;
                     </div>
                   </div>
+                </div>
                 <div class="calendar-body">
                   <div class="calendar-week-day">
                     <div>Sun</div>
@@ -76,7 +82,10 @@
                   </select>
                 </center>
               </div>
+             
+
               <div class="d-grid">
+                <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
                 <button name="submit" id="submit" type="submit" class="btn btn-primary bg-success">Submit</button>
               </div>
             </form>
@@ -97,441 +106,455 @@
         <div class="col-md-6">
           <div class="faq-form">
             <center><img src="icon.png" alt="udm Icon" class="iconudm img-fluid"></center>
-            <h2>Frequently Asked Questions<hr></h2>
+            <h2>Frequently Asked Questions
+              <hr>
+            </h2>
             <div class="faq">
-              <div class="question" onclick="toggleAnswer(event)">Q: APPLYING FOR A TRANSCRIPT OF RECORDS <br>(Graduates/Non-Graduates)</div>
+              <div class="question" onclick="toggleAnswer(event)">Q: APPLYING FOR A TRANSCRIPT OF RECORDS
+                <br>(Graduates/Non-Graduates)</div>
               <div class="answer">
 
-<b><i>WHO MAY AVAIL:</i></b> <br>
-       
-<b>1.</b> Student who are applying for: <br><br>
+                <b><i>WHO MAY AVAIL:</i></b> <br>
 
-<b>-</b>Honorable Dismissal<br>
+                <b>1.</b> Student who are applying for: <br><br>
 
-<b>-</b>Promotion<br>
+                <b>-</b>Honorable Dismissal<br>
 
-<b>-</b>Re-Ranking<br>
+                <b>-</b>Promotion<br>
 
-<b>-</b>Further Studies <br>
+                <b>-</b>Re-Ranking<br>
 
-<b>-</b>Employment<br>
+                <b>-</b>Further Studies <br>
 
-<b>-</b>Board Examinations<br>
+                <b>-</b>Employment<br>
 
-<b>-</b>Visa Application<br>
+                <b>-</b>Board Examinations<br>
 
-<b>-</b>Verification/ Assessment
-<br><br>
+                <b>-</b>Visa Application<br>
 
-<b><i>CHECKLIST REQUIREMENTS</i></b> <br><br>
+                <b>-</b>Verification/ Assessment
+                <br><br>
 
+                <b><i>CHECKLIST REQUIREMENTS</i></b> <br><br>
 
-<b>-</b>Accomplished Request form (RF)<br>
 
-<b>-</b>Official Receipt payment made<br>
+                <b>-</b>Accomplished Request form (RF)<br>
 
-<b>-</b>1.5 x 1.5 picture with name tag/
-white background (4 pcs)<br>
+                <b>-</b>Official Receipt payment made<br>
 
-<b>-</b>Documentary Stamps maroon (3 pcs) <br><br>
+                <b>-</b>1.5 x 1.5 picture with name tag/
+                white background (4 pcs)<br>
 
+                <b>-</b>Documentary Stamps maroon (3 pcs) <br><br>
 
 
-<b><i>CLIENT STEPS</i></b> <br><br>
 
+                <b><i>CLIENT STEPS</i></b> <br><br>
 
-<b>-</b>Upon submission of the accomplished Request Form, Clerk in charge will check the graduate's school record and issue an Order of Payment form to the student.<br>
 
-<b>-</b>CIC will school the date of release of the TOP upon submission of the duplicate copy of the official receipt.<br>
+                <b>-</b>Upon submission of the accomplished Request Form, Clerk in charge will check the graduate's
+                school record and issue an Order of Payment form to the student.<br>
 
-<b>-</b>CIC will verify the graduate's record and draft the transcript of records (TOR).<br>
+                <b>-</b>CIC will school the date of release of the TOP upon submission of the duplicate copy of the
+                official receipt.<br>
 
-<b>-</b>Evaluation of the TOR <br>
-<b>-</b>Printing of the TOR <br>
-<b>-</b>Signing of the TOR <br>
-<b>-</b>Issuance of the 2nd copy of the TOR <br>
+                <b>-</b>CIC will verify the graduate's record and draft the transcript of records (TOR).<br>
 
+                <b>-</b>Evaluation of the TOR <br>
+                <b>-</b>Printing of the TOR <br>
+                <b>-</b>Signing of the TOR <br>
+                <b>-</b>Issuance of the 2nd copy of the TOR <br>
 
 
 
-</div>
-</div>
-<div class="faq">
-  <div class="question" onclick="toggleAnswer(event)">Q: APPLYING FOR HONORABLE DISMISSAL</div>
-  <div class="answer">
-
-<b><i>WHO MAY AVAIL:</i></b> <br>
-
-<b>1.</b> Student who are transferring to other school<br><br>
-
-
-<b><i>FORMS TO FILL-UP</i></b> <br>
-
-
-<b>-</b>Clearance Form<br>
-
-
-<b>-</b>Request Form For F-137<br><br>
-
-<b><i>CHECKLIST REQUIREMENTS</i></b> <br><br>
-
-
-<b>-</b>Request Letter<br>
-
-<b>-</b>Signed Clearance Form<br>
-
-<b>-</b>University ID<br>
-
-<b>-</b>Form 137 <br>
-
-<b>-</b>4 pcs. Documentary stamp maroon<br>
-
-<b>-</b>4 pcs. 1.5 x 1.5 picture with name tag and white background<br><br>
-
-
-<b><i>CLIENT STEPS</i></b> <br><br>
-
-
-<b>-</b>Upon submission of the Request Letter,
-Clerk-in-Charge will check the student’s permanent
-record, provide the clearance form and
-request form for F-137, issue an Order of
-Payment form and inform the student of
-the other requirements.<br>
-
-<b>-</b>Upon submission of complete requirements,
-the information/releasing staff will issue a
-claim stub to students to come back on the scheduled date of release<br>
-
-<b>-</b>Clerk-in-Charge will prepare the transfer credentials for evaluation<br>
-
-<b>-</b>Evaluation and checking of the student’s
-transfer credential<br>
-
-<b>-</b>Signing of the transfer credential<br>
-
-<b>-</b>Once signed, CIC will issue the transfer
-credential to the student<br><br>
-
-
-
-
-</div>
-</div>
-<div class="faq">
-  <div class="question" onclick="toggleAnswer(event)">Q: APPLYING FOR THE CERTIFICATION OF ENROLLMENT</div>
-  <div class="answer">
-
-<b><i>WHO MAY AVAIL:</i></b> <br>
-
-<b>1.</b> Student applying with the following<br>
-
-
-<b>-</b>Scholarship<br>
-
-
-<b>-</b>Employment<br><br>
-
-
-
-
-<b><i>CHECKLIST REQUIREMENTS</i></b> <br>
-
-
-<b>-</b>Request Letter from the student<br>
-
-<b>-</b>Recent Registration Card<br>
-
-<b>-</b>Documentary Stamp<br><br>
-
-<b><i>FORMS TO FILL-UP</i></b> <br>
-
-
-<b>-</b>Request Form (RF)<br><br>
-
-
-
-<b><i>CLIENT STEPS</i></b> <br>
-
-
-<b>-</b>Receive the request letter<br>
-
-<b>-</b>Clerk-In-Charge will prepare the certification of enrollment for signature.<br>
-
-<b>-</b>Once signed. Clerk-In-Charge will issue the certificate to the student<br>
-
-
-
-
-</div>
-</div>
-<div class="faq">
-  <div class="question" onclick="toggleAnswer(event)">Q: APPLYING FOR CERTIFICATE RELATED TO THE FOLLOWING:
-
-    <br>(Graduation, Graduate with Honors, English as a Medium of Instruction,
-    
-    English Translation of Diploma)</div>
-  <div class="answer">
-
-<b><i>WHO MAY AVAIL:</i></b> <br>
-
-<b>1.</b> Student concern<br><br>
-
-
-
-<b><i>CHECKLIST REQUIREMENTS</i></b> <br>
-
-
-<b>1.</b>Request letter indicating purpose from the student<br><br>
-
-
-
-<b><i>FORMS TO FILL-UP</i></b> <br>
-
-
-<b>-</b>Request Form<br><br>
-
-
-
-<b><i>CLIENT STEPS</i></b> <br>
-
-
-<b>-</b>Receive the request letter<br>
-
-<b>-</b>CIC will verify records and prepare the certification needed for signature<br>
-
-<b>-</b>Once sign, CIC will issue certificate to the student<br>
-
-
-
-</div>
-</div>
-<div class="faq">
-  <div class="question" onclick="toggleAnswer(event)">Q: APPLYING FOR CROSS-ENROLLMENT OF SUBJECT/S</div>
-  <div class="answer">
-
-<b><i>WHO MAY AVAIL:</i></b> <br>
-
-<b>1.</b> Student concern<br><br>
-
-
-
-<b><i>CHECKLIST REQUIREMENTS</i></b> <br>
-
-
-<b>-</b>Request letter for Cross-enrollment
-with the College Dean’s and
-Registrar’s recommendation 
-for approval of the Vice-President
-for Academic Affairs<br><br>
-
-
-
-<b><i>CLIENT STEPS</i></b> <br>
-
-
-<b>-</b>Upon submission of the letter, CIC will check student’s total number of units enrolled, curriculum checklist and other university’s course description of subject/s<br>
-
-<b>-</b>Once completed, CIC will prepare the permit for cross-enrollment and issue it to the student<br>
-
-
-
-</div>
-</div>
-<div class="faq">
-  <div class="question" onclick="toggleAnswer(event)">Q: APPLYING FOR LEAVE OF ABSENCE</div>
-  <div class="answer">
-
-    <b><i>WHO MAY AVAIL:</i></b> <br>
-
-    <b>1.</b> Student whose reason are the following:
-    <br>
-    
-    <b>-</b>Financial<br>
-    <b>-</b>Family matter<br>
-    <b>-</b>Pregnancy<br>
-    <b>-</b>Employment<br><br>
-    
-
-
-<b><i>CHECKLIST REQUIREMENTS</i></b> <br>
-
-
-<b>1.</b>Request Letter that the student  is requesting to file Leave of Absence and address to:<br><br>
-<b>-</b>Vice-President for Academic Affairs<br>
-<b>-</b>Registrar<br>
-<b>-</b>College Dean<br>
-<b>-</b>ICTD<br><br>
-
-
-
-<b><i>CLIENT STEPS</i></b> <br>
-
-
-<b>1.</b>Accomplish the form No.8 signed by the following: <br><br>
-<b>-</b>College Dean<br>
-<b>-</b>Vice-President for Academic Affairs<br>
-Registrar<br><br>
-
-<b>-</b>The original form issued shall be signed by the clerk-in-charge upon submission of approved request otherwise considered null and void<br>
-
-<b>-</b>Submit the accomplished form no.8 to update to the student’s records. <br><br>
-
-
-</div>
-</div>
-<div class="faq">
-  <div class="question" onclick="toggleAnswer(event)">Q: APPLYING FOR CERTIFICATION OF GRADES</div>
-  <div class="answer">
-
-    <b><i>WHO MAY AVAIL:</i></b> <br>
-
-    <b>1.</b> Undergraduate and graduate students applying for:
-    <br>
-    
-    <b>-</b>Scholarship<br>
-    <b>-</b>Promotion<br>
-    <b>-</b>Re-ranking<br>
-    <b>-</b>Temporary document for purposes of transferring to the other school<br><br>
-    
-
-
-<b><i>CHECKLIST REQUIREMENTS</i></b> <br>
-
-
-<b>-</b>Request Letter from the student<br>
-<b>-</b>2 pcs. Documentary Stamp (Maroon)<br><br>
-
-
-
-<b><i>CLIENT STEPS</i></b> <br>
-
-
-<b>-</b>Upon submission of the request letter at the Registrar’s Office, CIC will check the student’s permanent record, inform the student of the other needed documents and the information/releasing staff issue a claim stub to come back on scheduled date of release. <br>
-<b>-</b>Drafting of the Certification of grades<br>
-<b>-</b>Evaluation of Certification<br>
-<b>-</b>Printing of Certification<br>
-<b>-</b>Signing of the Certification<br>
-<b>-</b>Issuance of the Certification of Grades <br><br>
-
-
-
-
-
-
-</div>
-</div>
-<div class="faq">
-  <div class="question" onclick="toggleAnswer(event)">Q: ADDING/DROPPING &
-    CHANGING OF SUBJECT</div>
-  <div class="answer">
-
-    <b><i>WHO MAY AVAIL:</i></b> <br>
-
-    <b>1.</b> Students who are requesting to file:<br>
-    Completion/removal of incomplete grade
-    <br><br>
-    
-  
-
-<b><i>CHECKLIST REQUIREMENTS</i></b> <br>
-
-
-<b>-</b>Report of Grades indicating INC<br>
-<b>-</b>Pre-Enrollment Form, the student is evaluated and has an incomplete grades Note: (1 requirement is accepted, either of the two)<br><br>
-
-
-
-<b><i>CLIENT STEPS</i></b> <br>
-<b>1.</b> Accomplish the form No.6 signed by the following<br>
-   
-
-
-<b>-</b>Faculty <br>
-<b>-</b>Vice-President for Academic Affairs<br>
-<b>-</b>Registrar<br>
- <br>
- <b>-</b>The original form shall be signed by the clerk-in-charge, otherwise considered null and void<br>
- <b>-</b>Submit the accomplished form no.6 to update/post the grade in student’s records, the incomplete grade was already completed<br>
-
-
- 
-</div>
-</div>
-<div class="faq">
-  <div class="question" onclick="toggleAnswer(event)">Q: COMPLETION OF INCOMPLETE GRADE</div>
-  <div class="answer">
-
-    <b><i>WHO MAY AVAIL:</i></b> <br>
-
-    <b>1.</b> Students who are requesting to file:<br>
-
-    Completion/removal of incomplete grade  
-    <br><br>
-    
-  
-
-<b><i>CHECKLIST REQUIREMENTS</i></b> <br>
-
-
-<b>-</b>Report of Grades indicating INC<br>
-<b>-</b>Pre-Enrollment Form, the student is evaluated and has an incomplete grades Note: (1 requirement is accepted, either of the two)<br><br>
-
-
-
-<b><i>CLIENT STEPS</i></b> <br>
-<b>1.</b> Accomplish the form No.6 signed by the following<br>
-   
-
-
-<b>-</b>Faculty <br>
-<b>-</b>Vice-President for Academic Affairs<br>
-<b>-</b>Registrar<br>
- <br>
- <b>-</b>The original form shall be signed by the clerk-in-charge, otherwise considered null and void<br>
- <b>-</b>Submit the accomplished form no.6 to update/post the grade in student’s records, the incomplete grade was already completed<br>
-
-
- 
-</div>
-</div>
-<div class="faq">
-  <div class="question" onclick="toggleAnswer(event)">Q: SHIFTING OF COURSE</div>
-  <div class="answer">
-
-    <b><i>WHO MAY AVAIL:</i></b> <br>
-
-    <b>1.</b> Concern Student  
-    <br><br>
-    
-  
-
-<b><i>CHECKLIST REQUIREMENTS</i></b> <br>
-
-
-<b>-</b>Request Letter that the student  is requesting to shift form one course to another address to<br>
-<b>-</b>Vice-President for Academic Affairs<br>
-<b>-</b>Registrar<br>
-<b>-</b>Accepting College (Dean)<br>
-<b>-</b>Releasing College (Dean)<br>
-<b>-</b>Pre-Enrollment Form/Checklist<br>
-<b>-</b>(the student should be evaluated to determine if he/she is qualified to shift)<br>
-<br>
-
-
-<b><i>CLIENT STEPS</i></b> <br>
-<b>1.</b> Accomplish the form No.7 signed by the following<br>
-
-
-<b>-</b>Accepting College <br>
-<b>-</b>Releasing College <br>
-<b>-</b>With approval of Vice-President for Academic Affairs <br>
-   
 
               </div>
             </div>
-            
-            <div class="g-recaptcha" data-sitekey="https://mrjeronluther.github.io/"></div>
+            <div class="faq">
+              <div class="question" onclick="toggleAnswer(event)">Q: APPLYING FOR HONORABLE DISMISSAL</div>
+              <div class="answer">
+
+                <b><i>WHO MAY AVAIL:</i></b> <br>
+
+                <b>1.</b> Student who are transferring to other school<br><br>
+
+
+                <b><i>FORMS TO FILL-UP</i></b> <br>
+
+
+                <b>-</b>Clearance Form<br>
+
+
+                <b>-</b>Request Form For F-137<br><br>
+
+                <b><i>CHECKLIST REQUIREMENTS</i></b> <br><br>
+
+
+                <b>-</b>Request Letter<br>
+
+                <b>-</b>Signed Clearance Form<br>
+
+                <b>-</b>University ID<br>
+
+                <b>-</b>Form 137 <br>
+
+                <b>-</b>4 pcs. Documentary stamp maroon<br>
+
+                <b>-</b>4 pcs. 1.5 x 1.5 picture with name tag and white background<br><br>
+
+
+                <b><i>CLIENT STEPS</i></b> <br><br>
+
+
+                <b>-</b>Upon submission of the Request Letter,
+                Clerk-in-Charge will check the student’s permanent
+                record, provide the clearance form and
+                request form for F-137, issue an Order of
+                Payment form and inform the student of
+                the other requirements.<br>
+
+                <b>-</b>Upon submission of complete requirements,
+                the information/releasing staff will issue a
+                claim stub to students to come back on the scheduled date of release<br>
+
+                <b>-</b>Clerk-in-Charge will prepare the transfer credentials for evaluation<br>
+
+                <b>-</b>Evaluation and checking of the student’s
+                transfer credential<br>
+
+                <b>-</b>Signing of the transfer credential<br>
+
+                <b>-</b>Once signed, CIC will issue the transfer
+                credential to the student<br><br>
+
+
+
+
+              </div>
+            </div>
+            <div class="faq">
+              <div class="question" onclick="toggleAnswer(event)">Q: APPLYING FOR THE CERTIFICATION OF ENROLLMENT</div>
+              <div class="answer">
+
+                <b><i>WHO MAY AVAIL:</i></b> <br>
+
+                <b>1.</b> Student applying with the following<br>
+
+
+                <b>-</b>Scholarship<br>
+
+
+                <b>-</b>Employment<br><br>
+
+
+
+
+                <b><i>CHECKLIST REQUIREMENTS</i></b> <br>
+
+
+                <b>-</b>Request Letter from the student<br>
+
+                <b>-</b>Recent Registration Card<br>
+
+                <b>-</b>Documentary Stamp<br><br>
+
+                <b><i>FORMS TO FILL-UP</i></b> <br>
+
+
+                <b>-</b>Request Form (RF)<br><br>
+
+
+
+                <b><i>CLIENT STEPS</i></b> <br>
+
+
+                <b>-</b>Receive the request letter<br>
+
+                <b>-</b>Clerk-In-Charge will prepare the certification of enrollment for signature.<br>
+
+                <b>-</b>Once signed. Clerk-In-Charge will issue the certificate to the student<br>
+
+
+
+
+              </div>
+            </div>
+            <div class="faq">
+              <div class="question" onclick="toggleAnswer(event)">Q: APPLYING FOR CERTIFICATE RELATED TO THE FOLLOWING:
+
+                <br>(Graduation, Graduate with Honors, English as a Medium of Instruction,
+
+                English Translation of Diploma)
+              </div>
+              <div class="answer">
+
+                <b><i>WHO MAY AVAIL:</i></b> <br>
+
+                <b>1.</b> Student concern<br><br>
+
+
+
+                <b><i>CHECKLIST REQUIREMENTS</i></b> <br>
+
+
+                <b>1.</b>Request letter indicating purpose from the student<br><br>
+
+
+
+                <b><i>FORMS TO FILL-UP</i></b> <br>
+
+
+                <b>-</b>Request Form<br><br>
+
+
+
+                <b><i>CLIENT STEPS</i></b> <br>
+
+
+                <b>-</b>Receive the request letter<br>
+
+                <b>-</b>CIC will verify records and prepare the certification needed for signature<br>
+
+                <b>-</b>Once sign, CIC will issue certificate to the student<br>
+
+
+
+              </div>
+            </div>
+            <div class="faq">
+              <div class="question" onclick="toggleAnswer(event)">Q: APPLYING FOR CROSS-ENROLLMENT OF SUBJECT/S</div>
+              <div class="answer">
+
+                <b><i>WHO MAY AVAIL:</i></b> <br>
+
+                <b>1.</b> Student concern<br><br>
+
+
+
+                <b><i>CHECKLIST REQUIREMENTS</i></b> <br>
+
+
+                <b>-</b>Request letter for Cross-enrollment
+                with the College Dean’s and
+                Registrar’s recommendation
+                for approval of the Vice-President
+                for Academic Affairs<br><br>
+
+
+
+                <b><i>CLIENT STEPS</i></b> <br>
+
+
+                <b>-</b>Upon submission of the letter, CIC will check student’s total number of units enrolled,
+                curriculum checklist and other university’s course description of subject/s<br>
+
+                <b>-</b>Once completed, CIC will prepare the permit for cross-enrollment and issue it to the student<br>
+
+
+
+              </div>
+            </div>
+            <div class="faq">
+              <div class="question" onclick="toggleAnswer(event)">Q: APPLYING FOR LEAVE OF ABSENCE</div>
+              <div class="answer">
+
+                <b><i>WHO MAY AVAIL:</i></b> <br>
+
+                <b>1.</b> Student whose reason are the following:
+                <br>
+
+                <b>-</b>Financial<br>
+                <b>-</b>Family matter<br>
+                <b>-</b>Pregnancy<br>
+                <b>-</b>Employment<br><br>
+
+
+
+                <b><i>CHECKLIST REQUIREMENTS</i></b> <br>
+
+
+                <b>1.</b>Request Letter that the student is requesting to file Leave of Absence and address to:<br><br>
+                <b>-</b>Vice-President for Academic Affairs<br>
+                <b>-</b>Registrar<br>
+                <b>-</b>College Dean<br>
+                <b>-</b>ICTD<br><br>
+
+
+
+                <b><i>CLIENT STEPS</i></b> <br>
+
+
+                <b>1.</b>Accomplish the form No.8 signed by the following: <br><br>
+                <b>-</b>College Dean<br>
+                <b>-</b>Vice-President for Academic Affairs<br>
+                Registrar<br><br>
+
+                <b>-</b>The original form issued shall be signed by the clerk-in-charge upon submission of approved
+                request otherwise considered null and void<br>
+
+                <b>-</b>Submit the accomplished form no.8 to update to the student’s records. <br><br>
+
+
+              </div>
+            </div>
+            <div class="faq">
+              <div class="question" onclick="toggleAnswer(event)">Q: APPLYING FOR CERTIFICATION OF GRADES</div>
+              <div class="answer">
+
+                <b><i>WHO MAY AVAIL:</i></b> <br>
+
+                <b>1.</b> Undergraduate and graduate students applying for:
+                <br>
+
+                <b>-</b>Scholarship<br>
+                <b>-</b>Promotion<br>
+                <b>-</b>Re-ranking<br>
+                <b>-</b>Temporary document for purposes of transferring to the other school<br><br>
+
+
+
+                <b><i>CHECKLIST REQUIREMENTS</i></b> <br>
+
+
+                <b>-</b>Request Letter from the student<br>
+                <b>-</b>2 pcs. Documentary Stamp (Maroon)<br><br>
+
+
+
+                <b><i>CLIENT STEPS</i></b> <br>
+
+
+                <b>-</b>Upon submission of the request letter at the Registrar’s Office, CIC will check the student’s
+                permanent record, inform the student of the other needed documents and the information/releasing staff
+                issue a claim stub to come back on scheduled date of release. <br>
+                <b>-</b>Drafting of the Certification of grades<br>
+                <b>-</b>Evaluation of Certification<br>
+                <b>-</b>Printing of Certification<br>
+                <b>-</b>Signing of the Certification<br>
+                <b>-</b>Issuance of the Certification of Grades <br><br>
+
+
+
+
+
+
+              </div>
+            </div>
+            <div class="faq">
+              <div class="question" onclick="toggleAnswer(event)">Q: ADDING/DROPPING &
+                CHANGING OF SUBJECT</div>
+              <div class="answer">
+
+                <b><i>WHO MAY AVAIL:</i></b> <br>
+
+                <b>1.</b> Students who are requesting to file:<br>
+                Completion/removal of incomplete grade
+                <br><br>
+
+
+
+                <b><i>CHECKLIST REQUIREMENTS</i></b> <br>
+
+
+                <b>-</b>Report of Grades indicating INC<br>
+                <b>-</b>Pre-Enrollment Form, the student is evaluated and has an incomplete grades Note: (1 requirement
+                is accepted, either of the two)<br><br>
+
+
+
+                <b><i>CLIENT STEPS</i></b> <br>
+                <b>1.</b> Accomplish the form No.6 signed by the following<br>
+
+
+
+                <b>-</b>Faculty <br>
+                <b>-</b>Vice-President for Academic Affairs<br>
+                <b>-</b>Registrar<br>
+                <br>
+                <b>-</b>The original form shall be signed by the clerk-in-charge, otherwise considered null and void<br>
+                <b>-</b>Submit the accomplished form no.6 to update/post the grade in student’s records, the incomplete
+                grade was already completed<br>
+
+
+
+              </div>
+            </div>
+            <div class="faq">
+              <div class="question" onclick="toggleAnswer(event)">Q: COMPLETION OF INCOMPLETE GRADE</div>
+              <div class="answer">
+
+                <b><i>WHO MAY AVAIL:</i></b> <br>
+
+                <b>1.</b> Students who are requesting to file:<br>
+
+                Completion/removal of incomplete grade
+                <br><br>
+
+
+
+                <b><i>CHECKLIST REQUIREMENTS</i></b> <br>
+
+
+                <b>-</b>Report of Grades indicating INC<br>
+                <b>-</b>Pre-Enrollment Form, the student is evaluated and has an incomplete grades Note: (1 requirement
+                is accepted, either of the two)<br><br>
+
+
+
+                <b><i>CLIENT STEPS</i></b> <br>
+                <b>1.</b> Accomplish the form No.6 signed by the following<br>
+
+
+
+                <b>-</b>Faculty <br>
+                <b>-</b>Vice-President for Academic Affairs<br>
+                <b>-</b>Registrar<br>
+                <br>
+                <b>-</b>The original form shall be signed by the clerk-in-charge, otherwise considered null and void<br>
+                <b>-</b>Submit the accomplished form no.6 to update/post the grade in student’s records, the incomplete
+                grade was already completed<br>
+
+
+
+              </div>
+            </div>
+            <div class="faq">
+              <div class="question" onclick="toggleAnswer(event)">Q: SHIFTING OF COURSE</div>
+              <div class="answer">
+
+                <b><i>WHO MAY AVAIL:</i></b> <br>
+
+                <b>1.</b> Concern Student
+                <br><br>
+
+
+
+                <b><i>CHECKLIST REQUIREMENTS</i></b> <br>
+
+
+                <b>-</b>Request Letter that the student is requesting to shift form one course to another address to<br>
+                <b>-</b>Vice-President for Academic Affairs<br>
+                <b>-</b>Registrar<br>
+                <b>-</b>Accepting College (Dean)<br>
+                <b>-</b>Releasing College (Dean)<br>
+                <b>-</b>Pre-Enrollment Form/Checklist<br>
+                <b>-</b>(the student should be evaluated to determine if he/she is qualified to shift)<br>
+                <br>
+
+
+                <b><i>CLIENT STEPS</i></b> <br>
+                <b>1.</b> Accomplish the form No.7 signed by the following<br>
+
+
+                <b>-</b>Accepting College <br>
+                <b>-</b>Releasing College <br>
+                <b>-</b>With approval of Vice-President for Academic Affairs <br>
+
+
+              </div>
+            </div>
+
+            <div class="g-recaptcha" data-sitekey="6Le8zjQmAAAAAA3MUuTzdgP49C7MHMU_lTMQrRZO"></div>
             <button class="btn btn-primary bg-success" onclick="closeForm()">Close</button>
           </div>
         </div>
@@ -546,9 +569,11 @@ Registrar<br><br>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll-polyfill/0.4.4/smoothscroll.min.js"></script>
 
 
+
+
   <script>
 
-    
+
   </script>
 </body>
 
